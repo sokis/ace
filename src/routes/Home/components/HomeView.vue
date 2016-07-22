@@ -1,20 +1,28 @@
 <template>
-  <div class="duck">
-    <h4>Welcome!</h4>
-    <img
-      alt='This is a duck, because Vuex!'
-      :src='DuckImage' />
+  <div class="list-container">
+    console...
+    {{list}}
   </div>
 </template>
 
 <script>
 
+import { mapActions, mapGetters } from 'vuex'
+import vList from './List'
 export default {
-  data () {
-    return {
-      DuckImage: require('../assets/Duck.jpg')
+    components:{
+    // vList
+    },
+    computed: {
+    ...mapGetters(['list'])
+    },
+    methods: mapActions(['getAticles']),
+    route: {
+        data: function (transition) {
+          this.getAticles()
+          transition.next()
+        }
     }
-  }
 }
 </script>
 

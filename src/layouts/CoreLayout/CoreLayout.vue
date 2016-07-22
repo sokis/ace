@@ -1,18 +1,31 @@
 <template>
-	<div className='container text-center'>
-		<v-header></v-header>
-		<div class="right">
-			<router-view class="router-view" transition="slide-up" transition-mode="out-in" keep-alive></router-view>
-			<slot></slot>
-		</div>
+	<div class='container'>
+		<v-progress :progress="progress"></v-progress>
+		<v-navbar :routes="routes"></v-navbar>
+		<router-view class="router-view" transition="slide-up" transition-mode="out-in" keep-alive></router-view>
+		<slot></slot>
 	</div>
 </template>
 <script>
-	import vHeader from '../../components/Header'
+	import vProgress from '../../components/Progress'
+	import vNavbar from '../../components/Navbar'
+	
+	import { routes } from '../../routes'
+	import { mapGetters } from 'vuex'
+
 	export default {
-		name: 'App',
+		name: 'v-layout',
+		data(){
+			return {
+				routes
+			}
+		},
+		computed: {
+			...mapGetters(['progress'])
+		},
 		components: {
-			vHeader
+			vProgress,
+			vNavbar
 		}
 	}
 </script>

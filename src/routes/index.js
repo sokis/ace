@@ -2,8 +2,8 @@
 const createRoutes = {
 	routes: {
 		'/': require("./Home"),
-		'/counter': require("./Counter"),
-		'/user': require("./User")
+		'/themes/': require("./Themes"),
+		'/about/': require("./About")
 	},
 
 	alias: {

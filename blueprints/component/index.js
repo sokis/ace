@@ -1,12 +1,12 @@
-import { normalizeCasing } from '../../src/util/text-helper';
+var utils = require('../../lib/text-helper');
 
 module.exports = {
   description() {
-    return '创建vue组件';
+    return '创建组件';
   },
   fileMapTokens() {
     return {
-      __style__: (options) => normalizeCasing(options.entity.name, 'dashes')
+      __style__: (options) => utils.normalizeCasing(options.entity.name, 'dashes')
     };
   }
 };

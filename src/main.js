@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import App from 'App'
 import { routes, alias }  from './routes'
+import store from 'vuex/store'
+import { actions } from 'vuex/modules/progress'
 
 if (module.hot) {
 	module.hot.accept()
@@ -11,9 +13,7 @@ Vue.config.debug = __DEV__
 
 // global mixins
 Vue.mixin({
-	// vuex: {
-	// 	getters: {  }
-	// }
+	store
 })
 
 Vue.use(Router)
@@ -28,18 +28,21 @@ const router = new Router({
 router.map(routes)
 router.alias(alias)
 
+//
 //全局钩子函数
 router.beforeEach(transition => {
 	if (transition.to.auth) {
 		// 对用户身份进行验证...
 		// transition.abort()
 	} else {
+		actions.setProgress(store, 60)
 		transition.next()
 	}
 })
 
 router.afterEach(transition => {
 	window.scrollTo(0, 0)
+	actions.setProgress(store, 100)
 })
 
 router.start(App, '#app')

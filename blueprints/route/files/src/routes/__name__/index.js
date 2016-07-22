@@ -1,13 +1,9 @@
 // Sync route definition
 export default {
-  name: '<%= pascalEntityName %>',
+  name: '<%= dashesEntityName %>',
   title: '<%= pascalEntityName %>',
   exact: true,
   component: resolve => require(['./components/<%= pascalEntityName %>View'], resolve)
 };
-// <%= pascalEntityName %>
-// <%= camelEntityName %>
-// <%= snakeEntityName %>
-// <%= dashesEntityName %>
 
 

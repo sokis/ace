@@ -2,7 +2,7 @@ import webpack from 'webpack'
 import cssnano from 'cssnano'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
-import config from '../config'
+import config, {utils_paths} from '../config'
 import _debug from 'debug'
 
 const debug = _debug('app:webpack:config')
@@ -18,7 +18,7 @@ const webpackConfig = {
 		root: paths.client(),
 		extensions: ['', '.css', '.js', '.json', '.vue'],
 		alias: {
-			vx: paths.client('vuex')
+			store: paths.client('vuex')
 		},
 		modulesDirectories: ['node_modules']
 	},
@@ -222,6 +222,29 @@ webpackConfig.module.loaders.push({
 		'postcss'
 	]
 })
+
+webpackConfig.vue = {
+	postcss: pack => {
+		// use webpack context
+		return [
+			require('postcss-import')({
+				root: utils_paths.client('styles'),
+				path: utils_paths.client('styles'),
+				addDependencyTo: pack
+			}),
+			require('postcss-url')(),
+			require('postcss-custom-properties')({
+				variables: require(utils_paths.client('styles/variables'))
+			}),
+			require('postcss-mixins')({
+				mixinsDir: utils_paths.client('styles/mixins')
+			}),
+			// require('postcss-cssnext')(),
+			require('postcss-browser-reporter')(),
+			require('postcss-reporter')()
+		]
+	}
+}
 
 // ------------------------------------
 // Style Configuration

@@ -1,24 +1,21 @@
 <template>
 	<div>
-		<h1>Vue Vuex Starter Kit</h1>
-		<div  class="left">
-			<v-navbar :routes="routes"></v-navbar>
-		</div>
+		<v-navbar :routes="route"></v-navbar>
 	</div>
 </template>
 <script>
-	import VNavbar from './Navbar'
-	import { routes } from '../routes'
+	import vNavbar from './Navbar'
+	import route from '../static/menu'
 	
 	export default {
-		name: 'header',
+		name: 'v-header',
 		data(){
 			return {
-				routes
+				route
 			}
 		},
 		components:{
-			VNavbar
+			vNavbar
 		}
 	}
 </script>

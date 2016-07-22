@@ -1,5 +1,19 @@
-.duck {
-  display: block;
-  width: 120px;
-  margin: 1.5rem auto;
-}
+  .list-container{
+  
+  }
+  .more-btn {
+      font-size: 1.5rem;
+      padding: 1rem 0;
+      width: 100%;
+      border: 0;
+      color: #fff;
+      background-color: #252e39;
+      border: none;
+      margin: 10px 0;
+      border-radius: .5rem;
+      outline: none;
+      cursor: pointer;
+  }
+  .more-btn:hover {
+      background-color: #455569;
+  }

@@ -1,39 +1,49 @@
+import request from 'plato-request'
+import {
+	PROMISE_SUCCESS
+} from 'store/constants'
+
 // ------------------------------------
 // Constants
 // ------------------------------------
-// export const ADD_USER = 'ADD_USER'
+export const GET_LIST = 'GET_LIST'
 
 // ------------------------------------
 // States
 // ------------------------------------
 const state = {
-  
-};
+    list: []
+}
 
 // ------------------------------------
 // Getters
 // ------------------------------------
-export const getters = {
-
-};
-
+const getters = {
+	list: state => state.list
+}
 // ------------------------------------
 // Action Handlers
 // ------------------------------------
-export const actions = {
-
-};
+const actions = {
+    getAticles({ commit }, payload) {
+        commit(GET_LIST, request('/api/4/news/before/20160722'))
+    }
+}
 
 // ------------------------------------
 // Mutations
 // ------------------------------------
-export const mutations = {
-
-};
+const mutations = {
+    [GET_LIST](state, {payload, meta}) {
+		if (PROMISE_SUCCESS === meta) {
+			state.list = payload.stories
+		}
+    }
+}
 
 export default {
-    state,
-    getters,
-    actions,
-    mutations
-};
+	state,
+	getters,
+	actions,
+	mutations
+}

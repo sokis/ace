@@ -47,6 +47,7 @@ const config = {
   },
   compiler_vendor : [
     'history',
+    'plato-request',
     'vue',
     'vue-router',
     'vuex',
