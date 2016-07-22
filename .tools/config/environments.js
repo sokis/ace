@@ -13,7 +13,7 @@ export default {
     proxy: {
       enabled: true,
       options: {
-        host: 'http://news.at.zhihu.com/',
+        host: 'http://cnodejs.org/',
         match: /^\/api\/.*/
       }
     }

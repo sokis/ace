@@ -1,7 +1,6 @@
 <template>
   <div class="list-container">
-    console...
-    {{list}}
+    <v-list :articles="list" :date="format"></v-list>
   </div>
 </template>
 
@@ -9,17 +8,34 @@
 
 import { mapActions, mapGetters } from 'vuex'
 import vList from './List'
+
+
 export default {
+    data(){
+
+      const date = new Date()
+      const pad = (val) => {
+          val += ''
+          if (val.length < 2) {
+              return '0' + val
+          }
+          return val
+      }
+
+      return {
+          format: date.getFullYear() + '-' + pad(date.getMonth() + 1) + '-' + pad(date.getDate())
+      }
+    },
     components:{
-    // vList
+      vList
     },
     computed: {
-    ...mapGetters(['list'])
+      ...mapGetters(['list'])
     },
     methods: mapActions(['getAticles']),
     route: {
         data: function (transition) {
-          this.getAticles()
+          this.getAticles(this.value)
           transition.next()
         }
     }

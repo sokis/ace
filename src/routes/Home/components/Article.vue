@@ -1,12 +1,11 @@
 <template>
-	<article class="list-item" v-link="{'name': 'news', params: {id: data.id}}">
-		<div class="item-preview" :style="{'background-image': 'url('+ cloudSrc +')'}"></div>
-		<p class="item-title">{{data.title}}</p>
+	<article class="list-item">
+		<div class="item-preview" :style="{'background-image': 'url('+ data.author.avatar_url +')'}"></div>
+		<p class="item-title">{{data.top ? '[置顶]' : ' '}} {{data.title}}</p>
 	</article>
 </template>
 
 <script>
-	const WAIT_IMG = require('../assets/Duck.jpg')
 	
     export default {
         props: {
@@ -17,13 +16,8 @@
         },
         data () {
             return {
-                cloudSrc: WAIT_IMG
+                cloudSrc: require('../assets/Duck.jpg')
             }
-        },
-        created () {
-            this.$covImg(this, this.data.img, cloudSrc => {
-                this.cloudSrc = cloudSrc
-            })
         }
     }
 </script>

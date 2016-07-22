@@ -26,7 +26,7 @@ const getters = {
 // ------------------------------------
 const actions = {
     getAticles({ commit }, payload) {
-        commit(GET_LIST, request('/api/4/news/before/20160722'))
+        commit(GET_LIST, request('/api/v1/topics'))
     }
 }
 
@@ -36,7 +36,7 @@ const actions = {
 const mutations = {
     [GET_LIST](state, {payload, meta}) {
 		if (PROMISE_SUCCESS === meta) {
-			state.list = payload.stories
+			state.list = payload.data
 		}
     }
 }

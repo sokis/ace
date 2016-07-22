@@ -1,5 +1,5 @@
 {
-  "name": "zhihu_news",
+  "name": "vue-ace",
   "version": "1.0.1",
   "keywords": [],
   "author": "zengyi.zal@gmail.com",
@@ -7,7 +7,7 @@
   "description": "vue, vuex, vue-router",
   "main": "index.js",
   "engines": {
-    "node": ">=4.2.0",
+    "node": ">=6.3.0",
     "npm": "^3.0.0"
   },
   "scripts": {

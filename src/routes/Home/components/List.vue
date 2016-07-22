@@ -1,5 +1,5 @@
 <template>
-    <section class="zhi-list">
+    <section class="list">
         <div class="list-date">{{date}}</div>
         <v-article v-for="data in articles" :data="data"></v-article>
     </section>
@@ -26,7 +26,7 @@
     }
 </script>
 <style>
-    .zhi-list {
+    .list {
         position: relative;
         padding: 0;
         padding-top: 5rem;
