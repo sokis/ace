@@ -18,7 +18,8 @@ const webpackConfig = {
 		root: paths.client(),
 		extensions: ['', '.css', '.js', '.json', '.vue'],
 		alias: {
-			store: paths.client('vuex')
+			store: paths.client('vuex'),
+			coms: paths.client('components')
 		},
 		modulesDirectories: ['node_modules']
 	},
@@ -223,6 +224,9 @@ webpackConfig.module.loaders.push({
 	]
 })
 
+// ------------------------------------
+// Style Configuration
+// ------------------------------------
 webpackConfig.vue = {
 	postcss: pack => {
 		// use webpack context
@@ -239,33 +243,30 @@ webpackConfig.vue = {
 			require('postcss-mixins')({
 				mixinsDir: utils_paths.client('styles/mixins')
 			}),
-			// require('postcss-cssnext')(),
+			require('postcss-cssnext')(),
 			require('postcss-browser-reporter')(),
 			require('postcss-reporter')()
 		]
-	}
+	},
+  	autoprefixer: false
 }
-
-// ------------------------------------
-// Style Configuration
-// ------------------------------------
-webpackConfig.postcss = [
-	cssnano({
-		autoprefixer: {
-			add: true,
-			remove: true,
-			browsers: ['last 2 versions']
-		},
-		discardComments: {
-			removeAll: true
-		},
-		discardUnused: false,
-		mergeIdents: false,
-		reduceIdents: false,
-		safe: true,
-		sourcemap: true
-	})
-]
+// webpackConfig.postcss = [
+// 	cssnano({
+// 		autoprefixer: {
+// 			add: true,
+// 			remove: true,
+// 			browsers: ['last 2 versions']
+// 		},
+// 		discardComments: {
+// 			removeAll: true
+// 		},
+// 		discardUnused: false,
+// 		mergeIdents: false,
+// 		reduceIdents: false,
+// 		safe: true,
+// 		sourcemap: true
+// 	})
+// ]
 
 // ------------------------------------
 // Finalize Configuration

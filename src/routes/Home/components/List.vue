@@ -1,12 +1,14 @@
 <template>
     <section class="list">
-        <div class="list-date">{{date}}</div>
-        <v-article v-for="data in articles" :data="data"></v-article>
+        <v-loading v-show='!articles.length'></v-loading>
+        <v-article v-for="data in articles" :data="data" transition="fade"></v-article>
     </section>
 </template>
 
 <script>
     import vArticle from './Article'
+    import vLoading from 'coms/Loading'
+
     export default {
         props: {
             'articles': {
@@ -21,7 +23,8 @@
             }
         },
         components: {
-            vArticle
+            vArticle,
+            vLoading
         }
     }
 </script>
@@ -29,9 +32,8 @@
     .list {
         position: relative;
         padding: 0;
-        padding-top: 5rem;
         padding-bottom: 2rem;
-        border-bottom: 1px solid #ECECEC;
+        /*border-bottom: 1px solid #ECECEC;*/
     }
     
     .list-date {

@@ -1,21 +1,14 @@
 
    .cov-nav {
-        position: fixed;
-        height: 6rem;
-        width: 100%;
         background-color: #252e39;
-        top: 0;
-        left: 0;
-        z-index: 2;
-        font-size: 1.5rem;
         color: #fff;
     }
     .nav-tab {
         display: inline-block;
-        height: 6rem;
-        line-height: 6rem;
+        height: 3rem;
+        line-height: 3rem;
         text-align: center;
-        min-width: 8rem;
+        min-width: 6rem;
         cursor: pointer;
     }
     .nav-moving {

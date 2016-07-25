@@ -7,11 +7,13 @@ import {
 // Constants
 // ------------------------------------
 export const GET_LIST = 'GET_LIST'
+export const SET_PAGE = 'SET_PAGE'
 
 // ------------------------------------
 // States
 // ------------------------------------
 const state = {
+	page: 1,
     list: []
 }
 
@@ -19,7 +21,8 @@ const state = {
 // Getters
 // ------------------------------------
 const getters = {
-	list: state => state.list
+	list: state => state.list,
+	page: state => state.page,
 }
 
 
@@ -27,9 +30,14 @@ const getters = {
 // Action Handlers
 // ------------------------------------
 const actions = {
-    getAticles({ commit }, payload) {
-        commit(GET_LIST, request('/api/v1/topics'))
-    }
+    getAticles({ commit }, query) {
+        commit(GET_LIST, request('/api/v1/topics', {
+			query
+		}))
+    },
+	setPage({commit}, page) {
+		commit(SET_PAGE, page)
+	}
 }
 
 // ------------------------------------
@@ -40,6 +48,9 @@ const mutations = {
 		if (PROMISE_SUCCESS === meta) {
 			state.list = payload.data
 		}
+    },
+    [SET_PAGE](state, payload) {
+		state.page = payload
     }
 }
 

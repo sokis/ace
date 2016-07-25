@@ -1,7 +1,18 @@
 <template>
 	<article class="list-item">
 		<div class="item-preview" :style="{'background-image': 'url('+ data.author.avatar_url +')'}"></div>
-		<p class="item-title">{{data.top ? '[置顶]' : ' '}} {{data.title}}</p>
+		<p class="item-title">
+			<template v-if='data.top || data.good'>
+				<span v-show='data.top' class="put_top">置顶</span>
+				<span v-show='data.good' class="put_good">精华</span>
+			</template>
+			<template v-else>
+				<span v-show='data.tab == "ask"' class="topiclist-tab">问答</span>
+				<span v-show='data.tab == "share"' class="topiclist-tab">分享</span>
+				<span v-show='data.tab == "job"' class="topiclist-tab">招聘</span>
+			</template>
+			{{data.title}}
+		</p>
 	</article>
 </template>
 
@@ -43,11 +54,9 @@
 	}
 	
 	.item-title {
-		font-size: 1.6rem;
 		height: 4rem;
 		padding: .5rem;
 		margin: 0;
-		line-height: 1.6;
 		overflow: hidden;
 	}
 	
@@ -66,11 +75,35 @@
 		}
 		.item-preview {
 			position: absolute;
-			width: 6rem;
+			width: 4rem;
 			right: .5rem;
 			top: .5rem;
 			left: inherit;
-			height: 6rem;
+			height: 4rem;
+			border-radius: 50px;
 		}
+	}
+	
+	.put_good,
+	.put_top {
+		background: #80bd01;
+		padding: 2px 4px;
+		border-radius: 3px;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		-o-border-radius: 3px;
+		color: #fff;
+		font-size: 12px;
+	}
+	
+	.topiclist-tab {
+		background-color: #e5e5e5;
+		color: #999;
+		padding: 2px 4px;
+		border-radius: 3px;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		-o-border-radius: 3px;
+		font-size: 12px;
 	}
 </style>

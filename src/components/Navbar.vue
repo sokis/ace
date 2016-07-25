@@ -1,5 +1,5 @@
 <template>
-  <nav class="cov-nav">
+  <nav class="header cov-nav">
     <template v-for="route in _routes">
       <div :class="['nav-tab','r-'+route.name]" @click="navRoute($event, route.name, $index + 1)">
         {{route.title}}

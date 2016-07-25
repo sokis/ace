@@ -7,7 +7,7 @@ const createRoutes = {
 	},
 
 	alias: {
-		// '/login/:username': '/login'
+		// '/:tab': '/'
 	}
 }
 
