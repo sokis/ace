@@ -21,6 +21,8 @@ const state = {
 const getters = {
 	list: state => state.list
 }
+
+
 // ------------------------------------
 // Action Handlers
 // ------------------------------------

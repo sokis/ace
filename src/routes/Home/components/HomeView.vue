@@ -9,10 +9,8 @@
 import { mapActions, mapGetters } from 'vuex'
 import vList from './List'
 
-
 export default {
     data(){
-
       const date = new Date()
       const pad = (val) => {
           val += ''
@@ -21,7 +19,6 @@ export default {
           }
           return val
       }
-
       return {
           format: date.getFullYear() + '-' + pad(date.getMonth() + 1) + '-' + pad(date.getDate())
       }
