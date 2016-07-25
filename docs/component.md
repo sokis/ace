@@ -8,21 +8,23 @@ Component创建遵循的规则，类似React里面的组件定义规范。
 
 **命名规则 **
 * .vue 命名规范为 `pascal`命名
-	```
-	// 示例
-	FFiled
-	Tables
-	TextBox
-	...
-	```
+```
+// 示例
+FFiled
+Tables
+TextBox
+...
+```
+
 * .css 为`dashes`命名
-	```
-	// 示例
-	f-filed.css
-	tables.css
-	text-box.css
-	 
-	```
+```
+// 示例
+f-filed.css
+tables.css
+text-box.css
+...
+```
+
 ## **定义**
 组件定义采用vue官方中`构建大型应用`中[单文件组件](http://cn.vuejs.org/guide/application.html#单文件组件)的定义方式。
 我们剥离style是为了方便样式统一管理
