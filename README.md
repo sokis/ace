@@ -14,3 +14,7 @@ CNodeJS 社区。 vue 版
     ```
     $ vuex g route <RouteName>
     ```
+
+## 文档
+- [Component](docs/component.md)
+- [Router](docs/router.md)
