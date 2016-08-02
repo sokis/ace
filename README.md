@@ -3,6 +3,7 @@ CNodeJS 社区。 vue 版
 
 
 ## 更新记录
+* 2016-08-02 ：移除.tools 目录，集成 `vuex-cli-webpack`
 * 2016-07-25 ：完成首页，分页几 分类
 
 ## 开发流程
@@ -22,3 +23,4 @@ $ vuex g route <RouteName>
 ## 文档
 - [Component](docs/component.md)
 - [Router](docs/router.md)
+- [Config](config/README.md)

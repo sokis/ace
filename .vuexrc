@@ -1,1 +1,7 @@
-{"sourceBase":"src","testBase":"tests","smartPath":"containers","dumbPath":"components","fileCasing":"default"}
+{
+	"sourceBase":"src",
+	"testBase":"tests",
+	"smartPath":"containers",
+	"dumbPath":"components",
+	"fileCasing":"default"
+}

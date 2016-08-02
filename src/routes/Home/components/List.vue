@@ -7,7 +7,7 @@
 
 <script>
     import vArticle from './Article'
-    import vLoading from 'coms/Loading'
+    import vLoading from 'components/Loading'
 
     export default {
         props: {

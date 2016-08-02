@@ -2,7 +2,9 @@
   <div class="list-container">
     <v-top-tab></v-top-tab>
     <v-list :articles="list"></v-list>
-    <v-pagin :count="count" :query="{ $limit: limit, $page: page }" @paginate="paginate"></v-pagin>
+    <v-pagin :count="count"
+     :query="{ $limit: limit, $page: page }"
+     @paginate="paginate"></v-pagin>
   </div>
 </template>
 
@@ -10,7 +12,7 @@
 
 import vList from './List'
 import vTopTab from './TopTab'
-import vPagin from 'coms/Pagin'
+import vPagin from 'components/Pagin'
 
 import { mapActions, mapGetters } from 'vuex'
 
