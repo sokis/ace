@@ -5,6 +5,7 @@
     <v-pagin :count="count"
      :query="{ $limit: limit, $page: page }"
      @paginate="paginate"></v-pagin>
+     
   </div>
 </template>
 
@@ -42,7 +43,7 @@ export default {
         data: function (transition) {
           this.getAticles({ page: 1, limit: this.limit, ...this.$route.query})
           this.setPage(1) // 重置分页
-          transition.next()
+          // transition.next()
         }
     }
 }

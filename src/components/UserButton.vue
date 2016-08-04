@@ -1,12 +1,12 @@
 <template>
-  <div :class="['v-my-comp', class]">
+  <div :class="['v-user-button', class]">
     <slot></slot>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'v-my-comp',
+  name: 'v-user-button',
   props: {
     class: {
       type: String,
@@ -16,4 +16,4 @@ export default {
 }
 </script>
 
-<style src="styles/components/my-comp"></style>
+<style src="styles/components/user-button"></style>

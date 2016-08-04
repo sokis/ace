@@ -1,45 +1,44 @@
 // ------------------------------------
 // Constants
 // ------------------------------------
-// export const ADD_USER = 'ADD_USER'
+const SET_ENV = 'SET_ENV'
 
 // ------------------------------------
 // States
 // ------------------------------------
 const state = {
-  userinfo:{}
-};
+	auth: false
+}
 
 // ------------------------------------
 // Getters
 // ------------------------------------
-export const getters = {
-
-};
+const getters = {
+	auth: state => state.auth
+}
 
 // ------------------------------------
 // Action Handlers
 // ------------------------------------
 export const actions = {
-    getUserInfo(){
-        
-    }
-};
+	//设置 
+	setEnv({ commit }, payload) {
+		commit(SET_ENV, payload)
+	}
+}
 
 // ------------------------------------
 // Mutations
 // ------------------------------------
 export const mutations = {
-    ["GET_USERINFO"](state,user){
-        state.userinfo = {
-            userName:"zhangsan"+user.name
-        }
-    }
-};
+	[SET_ENV](state, payload) {
+		Object.assign(state, payload)
+	}
+}
 
 export default {
-    state,
-    getters,
-    actions,
-    mutations
-};
+	state,
+	getters,
+	actions,
+	mutations
+}

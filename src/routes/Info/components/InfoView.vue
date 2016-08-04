@@ -1,7 +1,7 @@
 <template>
-  <div class="v-<%= dashesEntityName %>">
+  <div class="v-info">
     <h1>
-      <%= pascalEntityName %>
+      Infoasdfaf
     </h1>
   </div>
 </template>
@@ -10,7 +10,7 @@
 
   import { mapActions, mapGetters } from 'vuex'
   export default {
-    name: 'v-<%= dashesEntityName %>',
+    name: 'v-info',
     computed: {
       // ...mapGetters(['geterName']) 
     },

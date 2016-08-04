@@ -31,6 +31,7 @@ const getters = {
 // ------------------------------------
 const actions = {
     getAticles({ commit }, query) {
+		console.log(arguments[0])
         commit(GET_LIST, request('/api/v1/topics', {
 			query
 		}))
