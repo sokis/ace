@@ -1,4 +1,4 @@
-import request from 'plato-request'
+import {GET, POST} from 'utils/request'
 import {
 	PROMISE_SUCCESS
 } from 'store/constants'
@@ -32,7 +32,7 @@ const getters = {
 const actions = {
     getAticles({ commit }, query) {
 		console.log(arguments[0])
-        commit(GET_LIST, request('/api/v1/topics', {
+        commit(GET_LIST, GET(GET_LIST, {
 			query
 		}))
     },
