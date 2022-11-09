@@ -86,7 +86,7 @@
     "vue-html-loader": "^1.2.3",
     "vue-loader": "^8.5.3",
     "vue-router": "^0.7.13",
-    "vue-style-loader": "^1.0.0",
+    "vue-style-loader": "^2.0.1",
     "vue-validator": "^2.1.5",
     "vuex": "^2.0.0-rc.3",
     "vuex-localstorage": "^0.2.0",
